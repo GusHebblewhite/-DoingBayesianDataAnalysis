@@ -1,0 +1,13 @@
+
+model{
+    
+    #Likelihood
+    for (i in 1:Ntotal){
+        y[i] ~ dbern(theta)
+    }
+    
+    #Prior
+    prior_a = 1
+    prior_b = 1
+    theta ~ dbeta(prior_a, prior_b)
+}
